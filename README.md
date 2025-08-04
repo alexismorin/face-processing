@@ -15,4 +15,5 @@ Unitasker executable. Takes in an RGB photo of a face and spits out a repacked .
 ### Credits
 
 [- Uses The MiDas Unity Sensis implementation by Julien Kipp](https://github.com/julienkay/com.doji.midas)
+
 [- Guts grifted from my own no-click normalizer plugin](https://github.com/alexismorin/Normalize)
