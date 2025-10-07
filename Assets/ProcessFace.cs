@@ -56,8 +56,10 @@ public class ProcessFace : MonoBehaviour
                     {
                         ingestedTexture = DownloadHandlerTexture.GetContent(uwr);
 
-                        string[] splitFilename = argument.Split(new string[] { "\\", ".", "_" }, System.StringSplitOptions.RemoveEmptyEntries);
-                        fileName = "processed_" + splitFilename[splitFilename.Length - 2];
+                        //    string[] splitFilename = argument.Split(new string[] { "\\", ".", "_" }, System.StringSplitOptions.RemoveEmptyEntries);
+                        string scrubbedFileName = System.IO.Path.GetFileName(argument);
+                        //   fileName = "processed_" + splitFilename[splitFilename.Length - 2];
+                        fileName = "processed_" + scrubbedFileName;
 
                     }
                 }
