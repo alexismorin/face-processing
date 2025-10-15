@@ -57,10 +57,8 @@ public class ProcessFace : MonoBehaviour
                         ingestedTexture = DownloadHandlerTexture.GetContent(uwr);
 
                         //    string[] splitFilename = argument.Split(new string[] { "\\", ".", "_" }, System.StringSplitOptions.RemoveEmptyEntries);
-                        string scrubbedFileName = System.IO.Path.GetFileName(argument);
-                        //   fileName = "processed_" + splitFilename[splitFilename.Length - 2];
+                        string scrubbedFileName = System.IO.Path.GetFileNameWithoutExtension(argument);
                         fileName = "processed_" + scrubbedFileName;
-
                     }
                 }
 
@@ -122,14 +120,9 @@ public class ProcessFace : MonoBehaviour
             //  ouput the file to the target destination
             string desktopPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
 
-            if (encodeFormat == EncodeFormat.tga)
-            {
-                System.IO.File.WriteAllBytes(System.Environment.CurrentDirectory + "/" + fileName + ".tga", outputTexture.EncodeToTGA());
-            }
-            else
-            {
-                System.IO.File.WriteAllBytes(System.Environment.CurrentDirectory + "/" + fileName + ".png", outputTexture.EncodeToPNG());
-            }
+
+            System.IO.File.WriteAllBytes(System.Environment.CurrentDirectory + "/" + fileName + ".tga", outputTexture.EncodeToTGA());
+
 
 
 
